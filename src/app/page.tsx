@@ -1,12 +1,25 @@
 import Image from "next/image";
+// import {Helmet} from "react-helmet";
+import Head from 'next/head';
+import {TmpButton} from "@/app/tmpButton";
 
 export default function Home() {
   return (
+      <>
+        {/*<Helmet>*/}
+        <Head >
+        <meta property="og:image"
+              data-react-helmet="true"
+              content="https://optimaxweb.glassesusa.com/image/upload/f_auto,q_auto:eco/ms/media/catalog_product/1/000407_f_3.jpg/h=310,w=620,fit=fill,bg=fff"/>
+        </Head>
+      {/*</Helmet>*/}
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+        {/*<button onClick={() => {alert('123')}}>123</button>*/}
+        <TmpButton/>
         <Image
           className="dark:invert"
-          src="/next.svg"
+          src="next.svg"
           alt="Next.js logo"
           width={180}
           height={38}
@@ -96,6 +109,6 @@ export default function Home() {
           Go to nextjs.org →
         </a>
       </footer>
-    </div>
+    </div></>
   );
 }
